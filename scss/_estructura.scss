@@ -1,0 +1,916 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background: $body-background;
+	color: $color-body;
+	font-family: $letra;
+	margin: 0;
+
+ a{
+	text-decoration: none;
+	color: aquamarine;
+}
+}
+/* Header de navegación*/
+header {
+	width: 100%;
+	background: #4E94AB ;
+	margin:a;
+
+
+  label {
+	display: none;
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	border-right: 1px solid #fff;
+
+
+	:hover {
+	cursor: pointer;
+	background: rgba(0,0,0,0.3);
+}
+  }
+}
+
+#btn-menu {
+	display: none;
+}
+
+.menu {
+	ul {
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	display: flex;
+}
+
+    li {
+	border-right: 1px solid #fff;
+	flex-grow: 1000px;
+}
+
+     li:hover {
+	background: rgba(0,0,0,0.3);
+}
+
+     li a {
+	display: block;
+	padding: 15px 20px;
+	color: #fff;
+	text-decoration: none;
+}
+}
+
+@media (max-width: 768px) {
+	header label {
+		display: block;
+	}
+
+	.menu{
+		position: absolute;
+		background: #4E94AB;
+		width: 70%;
+		margin-left: -70%;
+		transition: all 0.5s;
+	
+
+	 ul {
+		flex-direction: column;
+	}
+
+	 li {
+		border-top: 1px solid #fff;
+	}
+}
+
+	#btn-menu:checked ~ .menu {
+		margin: -10px;
+	}
+}
+/* INDEX código */
+.principal {
+	width: 100%;
+	max-width: 1300px;
+	margin: 0px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(6, auto);
+
+	grid-template-areas: "header header header"
+	                     "main main sidebar"
+						 "integrantes informacion sidebar"
+						 "banda banda sidebar"
+						 "footer footer footer";
+}
+
+.principal > div,
+.principal .header,
+.principal .main,
+.principal .sidebar,
+.principal .banda,
+.principal .footer {
+	background: #fff;
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.principal .header {
+	background: #12203E;
+	color: #fff;
+	grid-area: header;
+    text-align: center;
+}
+
+.principal .main {
+	grid-area: main;
+	background: none;
+	color: #fff;
+	padding: 20px 40px;
+	align-self: center;
+}
+
+.main__img1 {border-radius: 30px;
+	width: 860px;
+	height: 350px;
+}
+
+.principal .sidebar {
+	grid-column: 3 / 4;
+	background: none;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+	grid-area: sidebar;
+}
+
+.principal .relativo,
+.principal .informacion {
+	background: none;
+	color: #fff;
+	height: 300px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.principal .relativo {
+	grid-area: relativo;
+}
+
+.principal .informacion {
+	grid-area: informacion;
+}
+
+.principal .banda{
+	background: none;
+	color: #fff;
+	height: 400px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-area: banda;
+}
+
+.principal .footer {
+	background: none;
+	color: #fff;
+	grid-area: footer;
+}
+
+@media screen and (max-width: 425px){
+	.principal {
+		grid-template-areas: "header header"
+		                 "main main"
+						 "sidebar sidebar"
+						 "relativo informacion"
+						 "banda banda"
+						 "footer footer";
+	}
+}
+@media screen and (min-width: 768px){
+	.principal {
+		grid-template-areas: "header header header"
+						 "main main main"
+						 "sidebar sidebar sidebar"
+						 "relativo relativo informacion"
+						 "banda banda banda"
+						 "footer footer footer";
+	}
+}
+@media screen and (min-width: 1024px){
+	.principal {
+		grid-template-areas: "header header header"
+						 "main main sidebar"
+						 "relativo informacion sidebar"
+						 "banda banda sidebar"
+						 "footer footer footer";
+	}
+}
+
+/* HISTORIA código */
+.contenedor {
+	width: 90%;
+	max-width: 1300px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, auto);
+
+	grid-template-areas: "header header header"
+						 "contenido contenido sidebar"
+						 "cultura informacion sidebar"
+						 "footer footer footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+	background: #fff;
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.contenedor .header {
+	background: #12203E;
+	color: #fff;
+	grid-area: header;
+    text-align: center;
+}
+
+.contenedor .contenido {
+	grid-area: contenido;
+}
+
+.contenedor .sidebar {
+	grid-column: 3 / 4;
+	background: none;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+	grid-area: sidebar;
+	color: #fff;
+}
+
+.contenedor .cultura,
+.contenedor .informacion {
+	background: none;
+	color: #000;
+	min-height: 100%;
+	text-align: justify;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contenedor .cultura {
+	grid-area: cultura;
+
+}
+.cultura{
+	
+  animation-duration: 5s;
+  animation-name: slidein;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+ 
+}
+
+@keyframes  slidein {
+from {
+  margin-left: 100%;
+  width: 300%
+}
+
+to {
+  margin-left: 0%;
+  width: 100%;
+}
+}
+
+.contenedor .informacion {
+	grid-area: informacion;
+}
+
+.contenedor .footer {
+	background: none;
+	color: #fff;
+	grid-area: footer;
+}
+
+@media screen and (max-width: 425px){
+	.contenedor {
+		grid-template-areas: "header header"
+						 "contenido contenido"
+						 "sidebar sidebar"
+						 "cultura informacion"
+						 "footer footer";
+	}
+}
+@media screen and (min-width: 768px){
+	.contenedor {
+		grid-template-areas: "header header header"
+						 "contenido contenido contenido"
+						 "sidebar sidebar sidebar"
+						 "cultura cultura informacion"
+						 "footer footer footer";
+	}
+}
+@media screen and (min-width: 1024px){
+	.contenedor {
+		grid-template-areas: "header header header"
+						 "contenido contenido sidebar"
+						 "cultura informacion sidebar"
+						 "footer footer footer";
+	}
+}
+
+/* Videografía código */
+.libreria {
+	width: 90%;
+	max-width: 1300px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(8, auto);
+
+	grid-template-areas: "header header header"
+						 "metal metal sidebar"
+						 "video1 video2 sidebar"
+						 "video3 video4 sidebar"
+						 "video5 video6 sidebar"
+						 "informativo informativo informativo"
+						 "footer footer footer";
+}
+
+.libreria > div,
+.libreria .header,
+.libreria .metal,
+.libreria .sidebar,
+.libreria .informativo
+.libreria .footer {
+	background: none;
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.libreria .header {
+	background: #12203E;
+	color: #fff;
+	grid-area: header;
+    text-align: center;
+}
+
+.libreria .metal {
+	grid-area: metal;
+	color: #fff;
+}
+
+.libreria .sidebar {
+	grid-column: 3 / 4;
+	background: none;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+	grid-area: sidebar;
+}
+
+.libreria .video1,
+.libreria .video2,
+.libreria .video3,
+.libreria .video4
+.libreria .video5
+.libreria .video6 {
+	background: none;
+	color: #fff;
+	height: 400px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.libreria .video1 {
+	grid-area: video1;
+}
+
+.libreria .video2 {
+	grid-area: video2;
+}
+
+.libreria .video3 {
+	grid-area: video3;
+}
+
+.libreria .video4 {
+	grid-area: video4;
+}
+
+.libreria .video5 {
+	grid-area: video5;
+}
+
+.libreria .video6 {
+	grid-area: video6;
+}
+
+.libreria .informativo{
+	grid-area: informativo;
+	background: none;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+}
+
+.libreria .footer {
+	background: none;
+	color: #fff;
+	grid-area: footer;
+}
+
+@media screen and (max-width: 425px){
+	.libreria {
+		grid-template-areas: "header header"
+						 "metal metal"
+						 "video1 video2"
+						 "video3 video4"
+						 "video5 video6"
+						 "sidebar sidebar"
+						 "informativo informativo"
+						 "footer footer";
+	}
+}
+@media screen and (min-width: 768px){
+	.libreria {
+		grid-template-areas: "header header header"
+						 "metal metal metal"
+						 "sidebar sidebar sidebar"
+						 "video1 video2 video3"
+						 "video4 video5 video6"
+						 "informativo informativo informativo"
+						 "footer footer footer";
+	}
+}
+@media screen and (min-width: 1024px){
+	.libreria {
+		grid-template-areas: "header header header"
+		                     "metal metal sidebar"
+		                     "video1 video2 sidebar"
+		                     "video3 video4 sidebar"
+		                     "video5 video6 sidebar"
+		                     "informativo informativo informativo"
+		                     "footer footer footer";
+	}
+}
+/* Contacto código */
+.form {
+	width: 90%;
+	max-width: 1300px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(6, auto);
+
+	grid-template-areas: "header header header"
+						 "rellenar rellenar rellenar"
+						 "sidebar formulario formulario"
+						 "sidebar contactenos pqr"
+						 "footer footer footer";
+}
+
+.form > div,
+.form .header,
+.form .rellenar,
+.form .formulario,
+.form .sidebar,
+.form .footer {
+	background: #fff;
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.form .header {
+	background: #12203E;
+	color: #fff;
+	grid-area: header;
+    text-align: center;
+}
+
+.form .rellenar {
+	grid-area: rellenar;
+}
+
+.form .formulario {
+	grid-area: formulario;
+	grid-column: 2 / 4;
+	background:none;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+}
+
+.formulario__estilotextarea {
+	width:300px;height:100px; border-radius: 2px solid #990000;
+	align-self: center;
+	font-family: Garamond,verdana;
+	font-size: 18pt;
+	font-weight: bold;
+	letter-spacing: 4px;
+}
+
+.form .sidebar {
+	grid-column: 3 / 4;
+	background: none;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+	grid-area: sidebar;
+}
+
+.form .contactenos,
+.form .pqr {
+	background: none;
+	color: #fff;
+	height: 100px;
+	width: auto;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form .contactenos {
+	grid-area: contactenos;
+}
+
+.form .pqr {
+	grid-area: pqr;
+}
+
+.form .footer {
+	background: none;
+	color: #fff;
+	grid-area: footer;
+}
+
+@media screen and (max-width: 425px){
+	.form {
+		grid-template-areas: "header header"
+						 "rellenar rellenar"
+						 "formulario formulario"
+						 "sidebar sidebar"
+						 "contactenos pqr"
+						 "footer footer";
+	}
+}
+@media screen and (min-width: 768px){
+	.form {
+		grid-template-areas: "header header header"
+						 "sidebar rellenar rellenar"
+						 "sidebar formulario formulario"
+						 "sidebar contactenos pqr"
+						 "footer footer footer";
+	}
+}
+@media screen and (min-width: 1024px){
+	.form {
+		grid-template-areas: "header header header"
+		                     "rellenar rellenar rellenar"
+		                     "sidebar formulario formulario"
+		                     "sidebar contactenos pqr"
+		                     "footer footer footer";
+	}
+}
+/* Albumes código */
+.discografia {
+	width: 90%;
+	max-width: 1300px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(6, auto);
+
+	grid-template-areas: "header header header"
+						 "albumes albumes albumes"
+						 "discos discos sidebar"
+						 "informativo informativo sidebar"
+						 "footer footer footer";
+}
+
+.discografia > div,
+.discografia .header,
+.discografia .albumes,
+.discografia .discos,
+.discografia .sidebar,
+.discografia .informativo
+.discografia .footer {
+	background: #fff;
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.discografia .header {
+	background: #12203E;
+	color: #fff;
+	grid-area: header;
+    text-align: center;
+}
+
+
+.discografia .albumes {
+	grid-area: albumes;
+}
+
+.discografia .sidebar {
+	grid-column: 4 / 4;
+	background: none;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+	grid-area: sidebar;
+}
+
+.discografia .discos{
+	background: transparent;
+	color: #fff;
+	height: 100%;
+	width: 760px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	grid-area: discos;
+	display: flex;
+}
+
+#discos__grid-1{
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+	grid-template-rows: repeat(6, auto);
+}
+
+#discos__grid-1 >div{
+	background: none;
+	color: #fff;
+	
+}
+
+#discos__size{
+	height: 380px;
+	width: 260px;
+}
+.discografia .informativo{
+	grid-area: informativo;
+	background: none;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+}
+
+.discografia .footer {
+	background: none;
+	color: #fff;
+	grid-area: footer;
+}
+
+@media screen and (max-width: 425px){
+	.discografia {
+		grid-template-areas: "header header"
+						     "albumes albumes"
+						     "discos discos"
+						     "sidebar sidebar"
+						     "informativo informativo"
+						     "footer footer";
+	}
+}
+@media screen and (min-width: 768px){
+	.discografia {
+		grid-template-areas: "header header header"
+		                     "albumes albumes sidebar"
+		                     "discos discos sidebar"
+		                     "informativo informativo sidebar"
+		                     "footer footer footer";
+	}
+}
+@media screen and (min-width: 1024px){
+	.discografia {
+		grid-template-areas: "header header header"
+		                     "albumes albumes albumes"
+		                     "discos discos sidebar"
+		                     "informativo informativo sidebar"
+		                     "footer footer footer";
+	}
+}
+/* Integrantes código */
+.integrantes {
+	width: 90%;
+	max-width: 1300px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(10, auto);
+
+	grid-template-areas: "header header header"
+						 "rock rock rock"
+						 "vocalista vocalista sidebar"
+						 "baterista baterista sidebar"
+						 "teclado teclado sidebar"
+						 "bajista bajista sidebar"
+						 "guitarrista guitarrista sidebar"
+						 "otraFormacion otraFormacion sidebar"
+						 "footer footer footer";
+}
+
+.integrantes > div,
+.integrantes .header,
+.integrantes .rock,
+.integrantes .sidebar,
+.integrantes .otraFormacion
+.integrantes .footer {
+	background: #fff;
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.integrantes .header {
+	background: #12203E;
+	color: #fff;
+	grid-area: header;
+    text-align: center;
+}
+
+.integrantes .rock {
+	grid-area: rock;
+}
+
+.integrantes .sidebar {
+	grid-column: 3 / 4;
+	background: none;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+	grid-area: sidebar;
+}
+
+.integrantes .vocalista,
+.integrantes .baterista,
+.integrantes .teclado,
+.integrantes .bajista,
+.integrantes .guitarrista {
+	background: none;
+	color: #fff;
+	height: 100%;
+	text-align: justify;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.integrantes .vocalista {
+	grid-area: vocalista;
+}
+
+#vocalista__img1 {border-radius: 30px;
+	width: 860px;
+	height: 350px;
+}
+
+.integrantes .baterista {
+	grid-area: baterista;
+}
+
+#baterista__img2 {border-radius: 30px;
+	width: 180px;
+	height: 290px;
+}
+
+.integrantes .teclado {
+	grid-area: teclado;
+}
+
+#teclado__img3 {border-radius: 30px;
+	width: 700px;
+	height: 380px;
+}
+
+.integrantes .bajista {
+	grid-area: bajista;
+}
+
+#bajista__img4 {border-radius: 30px;
+	width: 720px;
+	height: 435px;
+}
+
+.integrantes .guitarrista {
+	grid-area: guitarrista;
+}
+
+#guitarrista__img5 {border-radius: 30px;
+	width: 300px;
+	height: 300px;
+}
+
+.integrantes .otraFormacion{
+	grid-area: otraFormacion;
+	background: none;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100px;
+}
+
+.integrantes .footer {
+	background: none;
+	color: #fff;
+	grid-area: footer;
+}
+
+@media screen and (max-width: 425px){
+	.integrantes {
+		grid-template-areas: "header header"
+						 "rock rock"
+						 "vocalista vocalista"
+						 "baterista baterista"
+						 "teclado teclado"
+						 "bajista bajista"
+						 "guitarrista guitarrista"
+						 "otraFormacion otraFormacion"
+						 "sidebar sidebar"
+						 "footer footer";
+	}
+}
+@media screen and (min-width: 768px){
+	.integrantes {
+		grid-template-areas: "header header header"
+						 "rock rock rock"
+						 "vocalista baterista sidebar"
+						 "teclado bajista sidebar"
+						 "guitarrista otraFormacion sidebar"
+						 "footer footer footer";
+	}
+}
+@media screen and (min-width: 1024px){
+	.integrantes {
+		grid-template-areas: "header header header"
+		                     "rock rock rock"
+		                     "vocalista vocalista sidebar"
+		                     "baterista baterista sidebar"
+		                     "teclado teclado sidebar"
+		                     "bajista bajista sidebar"
+		                     "guitarrista guitarrista sidebar"
+		                     "otraFormacion otraFormacion sidebar"
+		                     "footer footer footer";
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+$body-background: linear-gradient(to right, #00416a, #799f0c, #ffe000);
+$letra: 'Roboto', sans-serif;
+$letra2: 'Anton', sans-serif;
+$color-body: #000;
+$width: 1000px;
+$nums: 10;
+$widthComplete: 960px;
+$widthSidebar: 200px; 
+
+.item {
+  width: $width/10;  
+}
+ 
+.lista {
+  width: $width/$nums;
+  background: red;
+}
+
+.tamaño {
+    width: ($widthComplete)-($widthSidebar);
+    background:black;
+  }
+
+.content {
+    width: ($widthComplete)-(100px);
+  }
+
+.ilustre {
+      font: 10px/8px; 
+      width:  $width/2; 
+      height: (500px/2); 
+      margin-left: 5px+8px/2px; 
+  }
+
+@mixin espacio($padding, $margin)  { 
+      @if  ($padding > $margin)  { 
+           padding: $padding; 
+      } @else { 
+           padding: $margin; 
+      }   
+}
+ 
+.mix { 
+      @include espacio(15px, 30px); 
+}

@@ -1,0 +1,16 @@
+.relativo__tabla1 {background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN4b6DfXhGyiRNZ4XnTJxwDKDttka1c0kygeOvfNNXaQ20ktV87zrFrHsYmvDMG3DRyic&usqp=CAU);
+    color: rgb(236, 215, 22);
+    border-style: double;
+    width: 500px;
+    height: 200px;
+    font-family: $letra2;
+    line-height: 1.1rem;
+}
+
+.otraFormacion__afuera{
+	list-style-position: outside;
+}
+
+#otraFormacion__colorCasilla{
+	background: radial-gradient(#0052D4,#4364F7,#6FB1FC)
+}
